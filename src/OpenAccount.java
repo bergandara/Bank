@@ -7,5 +7,5 @@ public class OpenAccount extends Transaction{
     public String getTransactionDescription(){
         return "Teller " + getTellerId() + " opened account " + getCustomerId();
     }
-    
+
 }

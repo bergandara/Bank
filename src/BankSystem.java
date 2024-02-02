@@ -45,4 +45,13 @@ public class BankSystem {
         Transaction transaction = new Withdrawal(customerId, tellerId, amount);
         this.transactions.add(transaction);
     }
+
+    public void deposit(int customerId, int tellerId, int amount){
+        BankAccount account = this.getAccount(customerId);
+        account.deposit(amount);
+
+        Transaction transaction = new Deposit(customerId, tellerId, amount);
+        this.transactions.add(transaction);
+    }
+    
 }

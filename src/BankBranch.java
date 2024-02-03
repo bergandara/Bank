@@ -7,7 +7,7 @@ public class BankBranch {
     private BankSystem bankSystem;
     private List<BankTeller> tellers;
 
-    public BankBranch(String address, int cashOnHand, BankSystem bankSystem, List<BankTeller> tellers) {
+    public BankBranch(String address, int cashOnHand, BankSystem bankSystem) {
         this.address = address;
         this.cashOnHand = cashOnHand;
         this.bankSystem = bankSystem;

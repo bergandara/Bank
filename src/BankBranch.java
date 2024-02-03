@@ -38,4 +38,26 @@ public class BankBranch {
         BankTeller teller = this.getAvailableTeller();
         this.bankSystem.deposit(customerId, teller.getId(), amount);
     }
+
+    public void withdraw(int customerId, int amount){
+        if(amount > this.cashOnHand){
+            throw new Error("Branch does not have enough cash");
+        }
+        if(this.tellers.size() == 0){
+            throw new Error("Branch does not have nay tellers");
+        }
+        this.cashOnHand -= amount;
+        BankTeller teller = this.getAvailableTeller();
+        this.bankSystem.withdraw(customerId, teller.getId(), amount);
+    }
+
+    public int collectCash(double ratio){
+        int cashToCollect = (int) Math.round(this.cashOnHand * ratio);
+        this.cashOnHand -= cashToCollect;
+        return cashToCollect;
+    }
+
+    public void provideCash(int amount){
+        this.cashOnHand += amount;
+    }
 }

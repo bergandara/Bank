@@ -53,5 +53,5 @@ public class BankSystem {
         Transaction transaction = new Deposit(customerId, tellerId, amount);
         this.transactions.add(transaction);
     }
-    
+
 }
